@@ -21,8 +21,7 @@ Este proyecto consiste en una API RESTful para la gestión de **reservas hoteler
 
 La estructura del proyecto fue pensada para separar responsabilidades y facilitar la escalabilidad:
 
-
-
+![Estructura del proyecto](https://github.com/KathyVenegas3/4.Proyecto_NODE.JS_Reservashoteleras_Modulo_N4/issues/1)
 
 ---
 
