@@ -2,7 +2,7 @@
 
 # 🏨 Proyecto Node.js: Gestión de Reservas Hoteleras
 
-Este proyecto consiste en la creacion de una aplicacion de servicios para la industria hotelera, específicamente para la gestión de reservas con un sistema de busqueda, utilizando **Node.js y Express**. Este desarrollo busca realizar operaciones **CRUD completas**, junto con **filtros específicos** como búsqueda por hotel, fechas, tipo de habitación, estado y cantidad de huéspedes. La API está documentada con **Swagger** y desplegada en **Render.com**.
+Este proyecto consiste en la creacion de una aplicacion de servicios para la industria hotelera, específicamente para la gestión de reservas con un sistema de busqueda, utilizando **Node.js y Express**. Este desarrollo busca realizar operaciones **CRUD completas**, junto con **filtros específicos** como búsqueda por hotel, fechas, tipo de habitación, estado y cantidad de huéspedes. La API está documentada con **Swagger/OpenAPI** y desplegada en **Render.com**.
 
 ---
 
