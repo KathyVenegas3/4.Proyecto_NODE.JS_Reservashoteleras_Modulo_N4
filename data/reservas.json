@@ -1,11 +1,20 @@
 [
   {
-    "id": "a62a1974-4441-4668-ba8f-dbf239d3d0aa",
-    "hotel": "Hotel Santiago",
+    "id": 1,
+    "hotel": "Hotel Patagonia",
     "tipoHabitacion": "Suite",
     "huespedes": 2,
-    "fechaInicio": "2025-08-01",
-    "fechaFin": "2025-08-05",
+    "fechaInicio": "2025-09-01",
+    "fechaFin": "2025-09-03",
+    "estado": "finalizada"
+  },
+  {
+    "id": 2,
+    "hotel": "Hotel Patagonia",
+    "tipoHabitacion": "Suite",
+    "huespedes": 2,
+    "fechaInicio": "2025-09-01",
+    "fechaFin": "2025-09-03",
     "estado": "activa"
   }
 ]

@@ -2,25 +2,42 @@
 
 const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 const Reserva = require('../models/reserva.model');
 
 const filePath = path.join(__dirname, '../data/reservas.json');
 
+// Leer archivo JSON
 function leerReservas() {
   const data = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(data);
 }
 
+// Guardar archivo JSON
 function guardarReservas(reservas) {
   fs.writeFileSync(filePath, JSON.stringify(reservas, null, 2));
+}
+
+// Generar ID numérico incremental
+function generarIdNumerico() {
+  const reservas = leerReservas();
+  if (reservas.length === 0) return 1;
+  const ids = reservas.map(r => r.id);
+  return Math.max(...ids) + 1;
 }
 
 // 1. Crear reserva
 function crearReserva(req, res) {
   const { hotel, tipoHabitacion, huespedes, fechaInicio, fechaFin, estado } = req.body;
   const reservas = leerReservas();
-  const nuevaReserva = new Reserva(uuidv4(), hotel, tipoHabitacion, huespedes, fechaInicio, fechaFin, estado);
+  const nuevaReserva = new Reserva(
+    generarIdNumerico(),
+    hotel,
+    tipoHabitacion,
+    huespedes,
+    fechaInicio,
+    fechaFin,
+    estado
+  );
   reservas.push(nuevaReserva);
   guardarReservas(reservas);
   res.status(201).json(nuevaReserva);
@@ -35,7 +52,7 @@ function obtenerReservas(req, res) {
 // 3. Obtener reserva por ID
 function obtenerReservaPorId(req, res) {
   const reservas = leerReservas();
-  const reserva = reservas.find(r => r.id === req.params.id);
+  const reserva = reservas.find(r => r.id === parseInt(req.params.id));
   if (!reserva) return res.status(404).json({ mensaje: 'Reserva no encontrada' });
   res.json(reserva);
 }
@@ -43,7 +60,7 @@ function obtenerReservaPorId(req, res) {
 // 4. Actualizar reserva por ID
 function actualizarReserva(req, res) {
   const reservas = leerReservas();
-  const index = reservas.findIndex(r => r.id === req.params.id);
+  const index = reservas.findIndex(r => r.id === parseInt(req.params.id));
   if (index === -1) return res.status(404).json({ mensaje: 'Reserva no encontrada' });
 
   reservas[index] = { ...reservas[index], ...req.body };
@@ -54,10 +71,10 @@ function actualizarReserva(req, res) {
 // 5. Eliminar reserva por ID
 function eliminarReserva(req, res) {
   let reservas = leerReservas();
-  const existe = reservas.some(r => r.id === req.params.id);
+  const existe = reservas.some(r => r.id === parseInt(req.params.id));
   if (!existe) return res.status(404).json({ mensaje: 'Reserva no encontrada' });
 
-  reservas = reservas.filter(r => r.id !== req.params.id);
+  reservas = reservas.filter(r => r.id !== parseInt(req.params.id));
   guardarReservas(reservas);
   res.json({ mensaje: 'Reserva eliminada correctamente' });
 }
@@ -111,9 +128,3 @@ module.exports = {
   filtrarPorEstado,
   filtrarPorHuespedes,
 };
-
-
-
-
-
-
