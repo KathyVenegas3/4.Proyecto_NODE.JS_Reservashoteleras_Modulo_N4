@@ -23,30 +23,30 @@ La estructura del proyecto fue pensada para separar responsabilidades y facilita
 
 │
 ├── controllers/
-│   └── reservas.controller.js     # Contiene la lógica de negocio para cada endpoint
+│   └── reservas.controller.js      # Contiene la lógica de negocio para cada endpoint
 
 │
 ├── data/
-│   └── reservas.json              # Archivo que simula la base de datos y en donde se guarda la información
+│   └── reservas.json               # Archivo que simula la base de datos y en donde se guarda la información
 
 │
 ├── models/
-│   └── reserva.model.js           # Archivo que define como deben estructurarse los datos
+│   └── reserva.model.js            # Archivo que define como deben estructurarse los datos
 
 │
 ├── routes/
-│   └── reservas.routes.js         # Mapa con todas las rutas de la API y las funciones que se ejecutaran
+│   └── reservas.routes.js          # Mapa con todas las rutas de la API y las funciones que se ejecutaran
 
 │
 ├── swagger/
-│   └── swagger.js                 # Configuración Swagger para documentar endpoints
+│   └── swagger.js                  # Configuración Swagger para documentar endpoints
 
 │
-├── .gitignore                     # Excluye node_modules y .env del repositorio
+├── .gitignore                      # Excluye node_modules y .env del repositorio
 
-├── server.js                      # Punto de entrada del servidor Express
+├── server.js                       # Punto de entrada del servidor Express
 
-├── README.md                      # Documentación del desarrollo del proyecto. 
+├── README.md                       # Documentación del desarrollo del proyecto. 
 
 ├── package.json / package-lock.json
 
