@@ -2,7 +2,7 @@
 
 # 🏨 Proyecto Node.js: Gestión de Reservas Hoteleras
 
-Este proyecto consiste en una API RESTful para la gestión de **reservas hoteleras**, implementada con **Node.js y Express**. Permite realizar operaciones **CRUD completas**, junto con **filtros específicos** como búsqueda por hotel, fechas, tipo de habitación, estado y cantidad de huéspedes. La API está documentada con **Swagger / OpenAPI** y desplegada en **Render.com**.
+Este proyecto consiste en la creacion de una aplicacion de servicios para la industria hotelera, específicamente para la gestión de reservas con un sistema de busqueda, utilizando **Node.js y Express**. Este desarrollo busca realizar operaciones **CRUD completas**, junto con **filtros específicos** como búsqueda por hotel, fechas, tipo de habitación, estado y cantidad de huéspedes. La API está documentada con **Swagger** y desplegada en **Render.com**.
 
 ---
 
@@ -10,7 +10,7 @@ Este proyecto consiste en una API RESTful para la gestión de **reservas hoteler
 
 - **Node.js** v22.x
 - **Express** v4.x
-- **Swagger UI Express** para documentación
+- **Swagger UI Express** para documentación 
 - **dotenv** para variables de entorno
 - **Estructura modular** siguiendo el patrón MVC
 - **Archivos JSON** como base de datos local
@@ -19,9 +19,29 @@ Este proyecto consiste en una API RESTful para la gestión de **reservas hoteler
 
 ## 📁 Arquitectura del Proyecto
 
-La estructura del proyecto fue pensada para separar responsabilidades y facilitar la escalabilidad:
+La estructura del proyecto fue pensada para separar responsabilidades y facilitar el entendimiento de cualquier persona que desee entender el codigo: 
 
-![Estructura del proyecto](https://github.com/KathyVenegas3/4.Proyecto_NODE.JS_Reservashoteleras_Modulo_N4/issues/1)
+│
+├── controllers/
+│   └── reservas.controller.js     # Contiene la lógica de negocio para cada endpoint
+│
+├── data/
+│   └── reservas.json              # Archivo que simula la base de datos y en donde se guarda la información
+│
+├── models/
+│   └── reserva.model.js           # Archivo que define como deben estructurarse los datos
+│
+├── routes/
+│   └── reservas.routes.js         # Mapa con todas las rutas de la API y las funciones que se ejecutaran
+│
+├── swagger/
+│   └── swagger.js                 # Configuración Swagger para documentar endpoints
+│
+├── .gitignore                     # Excluye node_modules y .env del repositorio
+├── server.js                      # Punto de entrada del servidor Express
+├── README.md                      # Documentación del desarrollo del proyecto. 
+├── package.json / package-lock.json
+
 
 ---
 
@@ -61,10 +81,11 @@ La estructura del proyecto fue pensada para separar responsabilidades y facilita
 🔹 Proyecto 100% funcional y probado con **Thunder Client**.  
 🔹 Cumple todos los requisitos técnicos y objetivos de aprendizaje:
 
-- [x] Aplicación CRUD completa
-- [x] Estructura modular y profesional
-- [x] Documentación Swagger
-- [x] Despliegue exitoso en Render
+- [x] Aplicar las operaciones CRUD en un segmento de datos
+- [x] Desarrollar una API REST
+- [x] Trabajar con datos estructurados
+- [x] Implementar la lógica de negocios
+- [x] Documentar una API
 
 ---
 
@@ -81,12 +102,12 @@ Puedes acceder a la documentación en formato UI desde:
 
 Se desplegó usando una instancia gratuita de **Render Web Service** con los siguientes pasos:
 
-1. Subir el proyecto a GitHub.
-2. Crear Web Service en [Render.com](https://render.com).
-3. Conectar el repo → Elegir branch `main`.
-4. Establecer variable de entorno:  
-   `PORT=10000` (o el puerto que uses).
-5. Presionar “Deploy Web Service”.
+1. Se subio el proyecto a GitHub.
+2. Se creo una Web Service en [Render.com](https://render.com).
+3. Se conecto el repo → Eligiendo branch `main`.
+4. Se establecio variable de entorno:  
+   `PORT=10000`
+5. Se desplego la opcion “Deploy Web Service”
 
 ## 🚀 URL de la API en Render
 
