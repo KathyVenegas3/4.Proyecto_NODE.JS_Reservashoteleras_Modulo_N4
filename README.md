@@ -24,6 +24,7 @@ La estructura del proyecto fue pensada para separar responsabilidades y facilita
 │
 ├── controllers/
 │   └── reservas.controller.js     # Contiene la lógica de negocio para cada endpoint
+
 │
 ├── data/
 │   └── reservas.json              # Archivo que simula la base de datos y en donde se guarda la información
